@@ -1,14 +1,18 @@
+
 <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="images/001.jpg" class="d-block w-100" alt="...">
+            <img src=<%= "/images/alquran/"+surahs[0].surah_num+'-'+surahs[0].surah+'('+surahs[0].first_page+'-'+surahs[0].last_page+').'+surahs[0].file_type%> class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item">
-            <img src="images/002.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="images/003.jpg" class="d-block w-100" alt="...">
-        </div>
+        <% for(var x=1; x < surahs.length; x++) { %>
+            <div class="carousel-item">
+                <img src=<%= "/images/alquran/"+surahs[x].surah_num+'-'+surahs[x].surah+'('+surahs[x].first_page+'-'+surahs[x].last_page+').'+surahs[x].file_type%> class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="color:black"><%= surahs[x].surah%></h5>
+                </div>
+            </div>
+         <% } %>
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -19,4 +23,3 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-

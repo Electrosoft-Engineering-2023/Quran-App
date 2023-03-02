@@ -1,32 +1,21 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #eee;
+
+
+.btn-huge{
+  padding-top:100px;
+  padding-bottom:100px;
+  font-weight:600;
+  font-size: 2rem;
+}
+.buttons { 
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+}
+.buttons button { 
+  width: 100%;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.wrapper {
-  width: 1000px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 10px;
-}
-
-header, footer {
-  background-color: ghostwhite;
-  padding: 20px;
-}
-
-main {
-  background-color: cornsilk;
-  padding: 20px;
-}
-
-.layout-sidebar {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 2fr 1fr;
+.btn-outline-thick {
+  border-width: medium;
 }

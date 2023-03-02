@@ -1,6 +1,6 @@
-const surah = [
-    { id: 1, name: '001-AlFatihah(001-AlBaqarah005).jpg'},
-    { id: 2, name: '002-AlBaqarah(006-024).jpg'},
-]
+// import surahs from './surah.json' assert {type: 'json'};
+const fs = require('fs');
+const surahs = JSON.parse(fs.readFileSync(__dirname+'/surah.json'));
 
-module.exports = surah
+
+module.exports = surahs

@@ -2,10 +2,11 @@ var express = require('express')
 var router = express.Router()
 
 const  { 
-    getProducts,
+    getPages,
+    getPage
 } = require('../controllers/SurahController.js')
 
-
-router.get('/:productID', getProducts)
+router.get('/', getPages)
+router.get('/:surahID', getPage)
 
 module.exports = router
