@@ -15,6 +15,10 @@
 .buttons button { 
   width: 100%;
 }
+.buttons a { 
+  width: 100%;
+}
+
 
 .btn-outline-thick {
   border-width: medium;
