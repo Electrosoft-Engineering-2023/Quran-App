@@ -4,14 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts')
-
+const port = process.env.PORT || 3000;
+var app = express();
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var surahRouter = require('./routes/surah');
-
-var app = express();
+var remoteRouter = require('./routes/remote');
 
 // view engine setup
 app.use(expressLayouts)
@@ -28,7 +28,8 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/surah', surahRouter)
+app.use('/surah', surahRouter);
+app.use('/remote', remoteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,6 +45,18 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+//socket io
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+io.on('connection', (socket) => {
+  socket.on('imam', data => {
+    io.emit('page', data);
+  });
+});
+http.listen(port, () => {
+  console.log(`Socket.IO server running at http://localhost:${port}/`);
 });
 
 module.exports = app;

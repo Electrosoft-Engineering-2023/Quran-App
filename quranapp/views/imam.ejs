@@ -1,0 +1,62 @@
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    $( document ).ready(function() {
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    currentPage.innerText = obj.page;
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    });
+</script>
+<h4>Current Page: <span id="currentPage" class="label label-default">-1</span></h4>
+<button onclick="goPreviousPage()" class="btn btn-primary btn-lg" ><i class="fa fa-angle-left" style="font-size:36px"></i></button>
+<button onclick="goNextPage()" class="btn btn-primary btn-lg" ><i class="fa fa-angle-right" style="font-size:36px"></i></button>
+<script>
+    var socket = io();
+    function page(n){
+        socket.emit('imam', {page:parseInt(n)});
+    }
+    function goNextPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page+1);
+                    currentPage.innerText = page;
+                    socket.emit('imam', {page:parseInt(page+1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    }
+    function goPreviousPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page-1);
+                    currentPage.innerText = page;
+                    socket.emit('imam', {page:parseInt(page-1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    }
+      //Ajax Function to send a get request
+    function sendPageNumber(id) {
+        $.ajax({
+            type: "GET",
+            url: "/remote/" + id,
+                success: function(data) {
+
+            }
+        });
+    }
+
+</script>
