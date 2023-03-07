@@ -19,8 +19,8 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-        // var socket = io();
-    var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
+        var socket = io();
+    // var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
     let slideIndex = 1;
     // showSlides(slideIndex);
     $( document ).ready(function() {
