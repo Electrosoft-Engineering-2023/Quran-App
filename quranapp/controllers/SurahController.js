@@ -1,19 +1,9 @@
 const surahs = require('../api/surah.js')
 
 const getPages = ((req, res) => {
-    imageArr = [];
-    // for(let x in surahs){
-    //     // var surah = surahs.find(surah => surah.id === surahs[x].id)
-    //     //get surah jpg file
-    //     var image_name = "/images/alquran/"+surahs[x].surah_num+'-'+surahs[x].surah+'('+surahs[x].first_page+'-'+surahs[x].last_page+').'+surahs[x].file_type;
-
-    //     imageArr.push(image_name);
-    // }
-
-    res.render('surahs', { 
+    res.render('surah', { 
         title: 'Surah',
         layout: './layouts/full-width',
-        // surahs: JSON.stringify(surahs),
         surahs: surahs,
     });
 })

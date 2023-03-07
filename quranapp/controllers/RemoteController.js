@@ -17,6 +17,22 @@ const updatePage = ((req, res) => {
 
 })
 
+const updatePageNumber = ((req, res) => { 
+    const data = Number(req.body.pageNum);
+    file[0].page = data;
+        
+    // fs.writeFile(fileName, JSON.stringify(file), function writeJSON(err) {
+    //   if (err) return console.log(err);
+    //   console.log(JSON.stringify(file));
+    //   console.log('writing to ' + fileName);
+    // });
+    fs.writeFileSync(fileName, JSON.stringify(file));
+    res.send({redirect: '/imam'});
+
+})
+
+
 module.exports = {
     updatePage,
+    updatePageNumber
 }

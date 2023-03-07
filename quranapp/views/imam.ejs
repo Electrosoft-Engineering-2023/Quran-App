@@ -12,13 +12,57 @@
         });
     });
 </script>
-<h4>Current Page: <span id="currentPage" class="label label-default">-1</span></h4>
-<button onclick="goPreviousPage()" class="btn btn-primary btn-lg" ><i class="fa fa-angle-left" style="font-size:36px"></i></button>
-<button onclick="goNextPage()" class="btn btn-primary btn-lg" ><i class="fa fa-angle-right" style="font-size:36px"></i></button>
+
+<div class="w3-display-middle">
+    <div class="w3-row">
+        <!-- <form class="w3-container" action="/remote/page/" method="POST"> -->
+        <form class="w3-container">
+            <h4>Page:</h4>
+            <input id="pageNum" name="pageNum" class="w3-input" type="text">
+            <button class="w3-button w3-indigo" onclick="goPage()">Submit</button>
+        </form>
+    </div>
+    <div class="w3-row">
+        <div class="w3-container">
+            <h4>Current Page: <span id="currentPage" class="label label-default">-1</span></h4>
+
+        </div> 
+    </div>
+    <div class="w3-row">           
+        <div class="w3-container">
+
+            <button onclick="goPreviousPage()" class="w3-left w3-button w3-indigo" >
+                <img src="/images/left-arrow.png" alt="buttonpng" style="width:30px; height:30px;">
+            </button>
+            <button onclick="goNextPage()" class="w3-right w3-button w3-indigo" >
+                <img src="/images/arrow-right.png" alt="buttonpng" style="width:30px; height:30px;">
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
     var socket = io();
     function page(n){
         socket.emit('imam', {page:parseInt(n)});
+    }
+    function goPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = document.getElementById("pageNum").value;
+                    sendPageNumber(page);
+                    currentPage.innerText = page;
+                    socket.emit('/imam', {page:parseInt(page)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
     }
     function goNextPage(){
         //get saved page number

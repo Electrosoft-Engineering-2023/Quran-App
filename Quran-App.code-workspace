@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name": "Quran-App",
-			"path": "../.."
+			"path": "."
 		}
 	],
 	"settings": {}

@@ -1,3 +1,73 @@
-<p><%= surah %></p>
-<p><%= image_name %></p>
-<img src=<%= image_name %> class="d-block w-100" alt="...">
+<div class="">
+    <div>
+        <div class="slideshow-container viewport">
+            <% for(var x=0; x < surahs.length; x++) { %>
+                <div class="mySlides fade">
+                    <img class="image w3-display-middle" src=<%= "/images/alquran/"+surahs[x].surah_num+'-'+surahs[x].surah+'('+surahs[x].first_page+'-'+surahs[x].last_page+').'+surahs[x].file_type%>>
+                    <h4 class="float"><%= surahs[x].id - 1%></h4>
+                </div>
+            <% } %>
+
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+        // var socket = io();
+    var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
+    let slideIndex = 1;
+    // showSlides(slideIndex);
+    $( document ).ready(function() {
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    // $('.carousel').carousel(obj.page);
+                    slideIndex = obj.page;
+                    showSlides(obj.page);
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    });
+    socket.on('page', function(sock_data) {
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    obj.page = sock_data.page;
+                    // $('.carousel').carousel(obj.page);
+                    slideIndex = obj.page;
+                    showSlides(obj.page);
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    });
+
+
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+
+        slides[slideIndex-1].style.display = "block";  
+    }
+</script>
+
