@@ -13,29 +13,44 @@
     });
 </script>
 
-<div class="w3-display-middle">
-    <div class="w3-row">
-        <!-- <form class="w3-container" action="/remote/page/" method="POST"> -->
-        <form class="w3-container">
-            <h4>Page:</h4>
-            <input id="pageNum" name="pageNum" class="w3-input" type="text">
-            <button class="w3-button w3-indigo" onclick="goPage()">Submit</button>
-        </form>
+<div class="w3-mobile w3-display-middle">
+    <div class="w3-row w3-container">
+        <div class="">
+            <a class="w3-button w3-indigo button" href="/remote/surahlist">
+                Surah List
+            </a>
+        </div> 
     </div>
-    <div class="w3-row">
-        <div class="w3-container">
-            <h4>Current Page: <span id="currentPage" class="label label-default">-1</span></h4>
+    <div class="w3-row w3-container">
+        <div class="">
+            <h4>Enter Page:</h4>
+        </div> 
+    </div>
+    <div class="w3-row w3-container">
+        <div class="w3-col s9 ">
+            <input id="pageNum" name="pageNum" class="w3-input" type="text">
+        </div>
+        <div class="w3-col s3">
+            <button class="w3-button w3-indigo button" onclick="goPage()">
+                <img src="/images/search.png" alt="buttonpng" style="width:15px; height:15px;">
+            </button>
+        </div>
+    </div>
+    
+    <div class="w3-row w3-container">
+        <div class="">
+            <h4>Current Page:<span id="currentPage" class="label label-default">-1</span></h4>
 
         </div> 
     </div>
-    <div class="w3-row">           
-        <div class="w3-container">
+    <div class="w3-row w3-container">           
+        <div class="">
 
             <button onclick="goPreviousPage()" class="w3-left w3-button w3-indigo" >
-                <img src="/images/left-arrow.png" alt="buttonpng" style="width:30px; height:30px;">
+                <img src="/images/left-arrow.png" alt="buttonpng" style="width:20px; height:20px;">
             </button>
             <button onclick="goNextPage()" class="w3-right w3-button w3-indigo" >
-                <img src="/images/arrow-right.png" alt="buttonpng" style="width:30px; height:30px;">
+                <img src="/images/arrow-right.png" alt="buttonpng" style="width:20px; height:20px;">
             </button>
 
         </div>
@@ -51,14 +66,24 @@
         socket.emit('imam', {page:parseInt(n)});
     }
     function goPage(){
+        var input_page = document.getElementById("pageNum").value;
+        var page=-1;
+        //if odd
+        if(input_page & 1){
+            page=(input_page/2)+1;
+        }
+        //if even
+        else{
+            page=(input_page/2);
+        }
+
         //get saved page number
         $.getJSON('/remote.json', function(data) {
             $.each(data, function(i, obj) {
                 if(obj.type === "Page"){
-                    var page = document.getElementById("pageNum").value;
+                    // var page = document.getElementById("pageNum").value;
                     sendPageNumber(page);
-                    currentPage.innerText = page;
-                    socket.emit('/imam', {page:parseInt(page)});
+                    socket.emit('imam', {page:parseInt(page)});
                     return false; // Loop will stop running after this
                 }
             });
@@ -71,7 +96,6 @@
                 if(obj.type === "Page"){
                     var page = obj.page;
                     sendPageNumber(obj.page+1);
-                    currentPage.innerText = page;
                     socket.emit('imam', {page:parseInt(page+1)});
                     return false; // Loop will stop running after this
                 }
@@ -85,7 +109,6 @@
                 if(obj.type === "Page"){
                     var page = obj.page;
                     sendPageNumber(obj.page-1);
-                    currentPage.innerText = page;
                     socket.emit('imam', {page:parseInt(page-1)});
                     return false; // Loop will stop running after this
                 }
@@ -96,11 +119,15 @@
     function sendPageNumber(id) {
         $.ajax({
             type: "GET",
-            url: "/remote/" + id,
+            url: "/remote/page/" + id,
                 success: function(data) {
 
             }
         });
     }
+    //get current page
+    socket.on('page', function(sock_data) {
+        currentPage.innerText = sock_data.page*2-1;
+    });
 
 </script>

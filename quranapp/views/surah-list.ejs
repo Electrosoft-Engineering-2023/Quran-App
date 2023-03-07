@@ -1,0 +1,33 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+</script>
+<div class="" style="width: 100vw">
+    <div>
+        <ul class="w3-ul w3-hoverable w3-card-4 w3-center w3-xlarge">
+            <% for(var x=0; x < surahs.length; x++) { %>
+                <li class="">
+                    <button onclick="sendPageNumber('<%= surahs[x].page%>')" style="width:100%; color:white; border: none; background: none;">
+                        <%= surahs[x].name%>
+                    </button>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+<script>
+    //Ajax Function to send a get request
+    function sendPageNumber(id) {
+        $.ajax({
+            type: "GET",
+            url: "/remote/page/" + id,
+                success: function(data) {
+
+            }
+        });
+        socket.emit('imam', {page:parseInt(id)});
+        window.location.href = '/imam';
+    }
+</script>
+
+
