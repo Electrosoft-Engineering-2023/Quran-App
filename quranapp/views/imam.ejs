@@ -5,7 +5,7 @@
         $.getJSON('/remote.json', function(data) {
             $.each(data, function(i, obj) {
                 if(obj.type === "Page"){
-                    currentPage.innerText = obj.page;
+                    currentPage.innerText = obj.page*2-1;
                     return false; // Loop will stop running after this
                 }
             });
