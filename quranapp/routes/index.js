@@ -14,4 +14,10 @@ router.get('/imam', function(req, res, next) {
     title: 'imam',
     layout: './layouts/full-width' });
 });
+
+router.get('/slides', function(req, res, next) {
+  res.render('slides', { 
+    title: 'Slides',
+    layout: './layouts/full-width' });
+});
 module.exports = router;
