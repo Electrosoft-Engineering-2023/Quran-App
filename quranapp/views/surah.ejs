@@ -1,25 +1,24 @@
 <div class="">
     <div>
         <div class="slideshow-container viewport">
-            <% for(var x=0; x < surahs.length; x++) { %>
-                <div class="mySlides fade">
-                    <img class="image w3-display-middle" src=<%= "/images/alquran/"+surahs[x].surah_num+'-'+surahs[x].surah+'('+surahs[x].first_page+'-'+surahs[x].last_page+').'+surahs[x].file_type%>>
-                    <h4 class="float-left"><%= surahs[x].id*2-1%></h4>
-                    <h4 class="float-right"><%= surahs[x].id*2%> </h4>
-                </div>
-            <% } %>
+            <div class="flex-container">
+                <img id="currentImage" class="image w3-display-middle" src="">
+                <h4 id="currentImageFloatRight" class="float-left"></h4>
+                <h4 id="currentImageFloatLeft" class="float-right"></h4>
 
-            
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <!-- Images  -->
+
             
         </div>
     </div>
 </div>
-
 <script src="/socket.io/socket.io.js"></script>
-<script>
-        var socket = io();
+<script type='text/javascript'>
+    var surahs =<%-JSON.stringify(surahs)%>;
+    var socket = io();
     // var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
     let slideIndex = 1;
     // showSlides(slideIndex);
@@ -27,31 +26,16 @@
         $.getJSON('/remote.json', function(data) {
             $.each(data, function(i, obj) {
                 if(obj.type === "Page"){
-                    // $('.carousel').carousel(obj.page);
                     slideIndex = obj.page;
-                    showSlides(obj.page);
+                    showSlides(parseInt(obj.page));
                     return false; // Loop will stop running after this
                 }
             });
         });
     });
-    // socket.on('page', function(sock_data) {
-    //     $.getJSON('/remote.json', function(data) {
-    //         $.each(data, function(i, obj) {
-    //             if(obj.type === "Page"){
-    //                 obj.page = sock_data.page;
-    //                 // $('.carousel').carousel(obj.page);
-    //                 // slideIndex = obj.page;
-    //                 showSlides(obj.page);
-    //                 return false; // Loop will stop running after this
-    //             }
-    //         });
-    //     });
-    // });
+
     socket.on('page', function(sock_data) {
-
         showSlides(sock_data.page);
-
     });
 
 
@@ -65,16 +49,12 @@
     }
 
     function showSlides(n) {
+        n-=1;
         slideIndex=n;
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-
-        slides[slideIndex-1].style.display = "block";  
+        //images
+        currentImage.src="/images/alquran/"+surahs[n].surah_num+'-'+surahs[n].surah+'('+surahs[n].first_page+'-'+surahs[n].last_page+').'+surahs[n].file_type;
+        currentImageFloatRight.innerHTML = surahs[n].id*2-1;
+        currentImageFloatLeft.innerHTML = surahs[n].id*2;
     }
 </script>
 
