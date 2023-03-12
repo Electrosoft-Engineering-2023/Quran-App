@@ -1,11 +1,16 @@
 {
   "name": "quranapp",
   "version": "0.0.0",
+  "description": "A description of your application",
+  "author": "Alya Athirah",
+  "main": "main.js",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "DEBUG=myapp:* nodemon ./bin/www",
-    "dev": "DEBUG=quranapp:* nodemon app.js"
+    "dev": "DEBUG=quranapp:* nodemon app.js",
+    "electron": "electron .",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -19,7 +24,6 @@
     "socket.io": "^4.6.1"
   },
   "devDependencies": {
-    "electron-builder": "^23.6.0",
-    "nodemon": "^2.0.20"
+    "electron": "^23.1.3"
   }
 }
