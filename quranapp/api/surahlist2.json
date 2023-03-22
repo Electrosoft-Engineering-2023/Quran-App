@@ -1,0 +1,572 @@
+[
+ {
+   "id": 1,
+   "name": "AlFatihah",
+   "page": "1"
+ },
+ {
+   "id": 2,
+   "name": "AlBaqarah",
+   "page": "2"
+ },
+ {
+   "id": 3,
+   "name": "AlImran",
+   "page": "50"
+ },
+ {
+   "id": 4,
+   "name": "AnNisa",
+   "page": "77"
+ },
+ {
+   "id": 5,
+   "name": "AlMaidah",
+   "page": "106"
+ },
+ {
+   "id": 6,
+   "name": "AlAnaam",
+   "page": "128"
+ },
+ {
+   "id": 7,
+   "name": "Al'Araf",
+   "page": "151"
+ },
+ {
+   "id": 8,
+   "name": "AlAnfal",
+   "page": "177"
+ },
+ {
+   "id": 9,
+   "name": "AtTaubah",
+   "page": "187"
+ },
+ {
+   "id": 10,
+   "name": "Yunus",
+   "page": "208"
+ },
+ {
+   "id": 11,
+   "name": "Hud",
+   "page": "221"
+ },
+ {
+   "id": 12,
+   "name": "Yusof",
+   "page": "235"
+ },
+ {
+   "id": 13,
+   "name": "Al'Arad",
+   "page": "249"
+ },
+ {
+   "id": 14,
+   "name": "Ibrahim",
+   "page": "255"
+ },
+ {
+   "id": 15,
+   "name": "AlHijr",
+   "page": "262"
+ },
+ {
+   "id": 16,
+   "name": "AnNahli",
+   "page": "267"
+ },
+ {
+   "id": 17,
+   "name": "AlIsra'",
+   "page": "282"
+ },
+ {
+   "id": 18,
+   "name": "AlKahfi",
+   "page": "293"
+ },
+ {
+   "id": 19,
+   "name": "Maryam",
+   "page": "305"
+ },
+ {
+   "id": 20,
+   "name": "Taha",
+   "page": "312"
+ },
+ {
+   "id": 21,
+   "name": "AlAnbia",
+   "page": "322"
+ },
+ {
+   "id": 22,
+   "name": "AlHaj",
+   "page": "332"
+ },
+ {
+   "id": 23,
+   "name": "AlMu'minun",
+   "page": "342"
+ },
+ {
+   "id": 24,
+   "name": "AnNur",
+   "page": "350"
+ },
+ {
+   "id": 25,
+   "name": "AlFurqan",
+   "page": "359"
+ },
+ {
+   "id": 26,
+   "name": "AsSyu'ara",
+   "page": "367"
+ },
+ {
+   "id": 27,
+   "name": "AnNaml",
+   "page": "377"
+ },
+ {
+   "id": 28,
+   "name": "AlQisas",
+   "page": "385"
+ },
+ {
+   "id": 29,
+   "name": "AlAnkabut",
+   "page": "396"
+ },
+ {
+   "id": 30,
+   "name": "ArRom",
+   "page": "404"
+ },
+ {
+   "id": 31,
+   "name": "Luqman",
+   "page": "411"
+ },
+ {
+   "id": 32,
+   "name": "AsSajadah",
+   "page": "415"
+ },
+ {
+   "id": 33,
+   "name": "AlAhzab",
+   "page": "418"
+ },
+ {
+   "id": 34,
+   "name": "Saba",
+   "page": "428"
+ },
+ {
+   "id": 35,
+   "name": "Fathir",
+   "page": "434"
+ },
+ {
+   "id": 36,
+   "name": "Yaasin",
+   "page": "440"
+ },
+ {
+   "id": 37,
+   "name": "Shafaat",
+   "page": "446"
+ },
+ {
+   "id": 38,
+   "name": "Shad",
+   "page": "453"
+ },
+ {
+   "id": 39,
+   "name": "AzZumar",
+   "page": "458"
+ },
+ {
+   "id": 40,
+   "name": "Ghafir",
+   "page": "467"
+ },
+ {
+   "id": 41,
+   "name": "Fussilat",
+   "page": "477"
+ },
+ {
+   "id": 42,
+   "name": "AsSyura",
+   "page": "483"
+ },
+ {
+   "id": 43,
+   "name": "AzZukhruf",
+   "page": "489"
+ },
+ {
+   "id": 44,
+   "name": "AdDukhan",
+   "page": "496"
+ },
+ {
+   "id": 45,
+   "name": "AlJatsiah",
+   "page": "499"
+ },
+ {
+   "id": 46,
+   "name": "AlAhqaf",
+   "page": "502"
+ },
+ {
+   "id": 47,
+   "name": "Muhammad",
+   "page": "507"
+ },
+ {
+   "id": 48,
+   "name": "AlFath",
+   "page": "511"
+ },
+ {
+   "id": 49,
+   "name": "AlHujurat",
+   "page": "515"
+ },
+ {
+   "id": 50,
+   "name": "Qaf",
+   "page": "518"
+ },
+ {
+   "id": 51,
+   "name": "AzZariat",
+   "page": "520"
+ },
+ {
+   "id": 52,
+   "name": "AtThur",
+   "page": "523"
+ },
+ {
+   "id": 53,
+   "name": "AnNajm",
+   "page": "526"
+ },
+ {
+   "id": 54,
+   "name": "AlQamar",
+   "page": "528"
+ },
+ {
+   "id": 55,
+   "name": "ArRahman",
+   "page": "531"
+ },
+ {
+   "id": 56,
+   "name": "AlWaqiah",
+   "page": "534"
+ },
+ {
+   "id": 57,
+   "name": "AlHadid",
+   "page": "537"
+ },
+ {
+   "id": 58,
+   "name": "AlMujaddalah",
+   "page": "542"
+ },
+ {
+   "id": 59,
+   "name": "AlHasyr",
+   "page": "545"
+ },
+ {
+   "id": 60,
+   "name": "AlMumtahanah",
+   "page": "549"
+ },
+ {
+   "id": 61,
+   "name": "AsShaf",
+   "page": "551"
+ },
+ {
+   "id": 62,
+   "name": "AlJumuat",
+   "page": "553"
+ },
+ {
+   "id": 63,
+   "name": "AlMunafiqun",
+   "page": "554"
+ },
+ {
+   "id": 64,
+   "name": "AlTaghabun",
+   "page": "556"
+ },
+ {
+   "id": 65,
+   "name": "AtTalaq",
+   "page": "558"
+ },
+ {
+   "id": 66,
+   "name": "AtTahrim",
+   "page": "560"
+ },
+ {
+   "id": 67,
+   "name": "AlMulk",
+   "page": "562"
+ },
+ {
+   "id": 68,
+   "name": "AlQalam",
+   "page": "564"
+ },
+ {
+   "id": 69,
+   "name": "AlHaqqah",
+   "page": "566"
+ },
+ {
+   "id": 70,
+   "name": "AlMaarij",
+   "page": "568"
+ },
+ {
+   "id": 71,
+   "name": "Nuh",
+   "page": "570"
+ },
+ {
+   "id": 72,
+   "name": "AlJin",
+   "page": "572"
+ },
+ {
+   "id": 73,
+   "name": "AlMuzamil",
+   "page": "574"
+ },
+ {
+   "id": 74,
+   "name": "AlMudhatsir",
+   "page": "575"
+ },
+ {
+   "id": 75,
+   "name": "AlQiyamah",
+   "page": "577"
+ },
+ {
+   "id": 76,
+   "name": "AlInsan",
+   "page": "578"
+ },
+ {
+   "id": 77,
+   "name": "AlMursalat",
+   "page": "580"
+ },
+ {
+   "id": 78,
+   "name": "AnNaba'",
+   "page": "582"
+ },
+ {
+   "id": 79,
+   "name": "AnNaziat",
+   "page": "583"
+ },
+ {
+   "id": 80,
+   "name": "Abasa",
+   "page": "585"
+ },
+ {
+   "id": 81,
+   "name": "AtTakwir",
+   "page": "586"
+ },
+ {
+   "id": 82,
+   "name": "AlInfitar",
+   "page": "587"
+ },
+ {
+   "id": 83,
+   "name": "AlMutafifin",
+   "page": "587"
+ },
+ {
+   "id": 84,
+   "name": "AlInsyiqaq",
+   "page": "589"
+ },
+ {
+   "id": 85,
+   "name": "AlBuruj",
+   "page": "590"
+ },
+ {
+   "id": 86,
+   "name": "AthTariq",
+   "page": "591"
+ },
+ {
+   "id": 87,
+   "name": "AlA'la",
+   "page": "591"
+ },
+ {
+   "id": 88,
+   "name": "AlGhasiyah",
+   "page": "592"
+ },
+ {
+   "id": 89,
+   "name": "AlFajr",
+   "page": "593"
+ },
+ {
+   "id": 90,
+   "name": "AlBalad",
+   "page": "594"
+ },
+ {
+   "id": 91,
+   "name": "AsySyams",
+   "page": "595"
+ },
+ {
+   "id": 92,
+   "name": "AlLail",
+   "page": "595"
+ },
+ {
+   "id": 93,
+   "name": "Ad Duha",
+   "page": "596"
+ },
+ {
+   "id": 94,
+   "name": "AlInsyirah",
+   "page": "596"
+ },
+ {
+   "id": 95,
+   "name": "AtTin",
+   "page": "597"
+ },
+ {
+   "id": 96,
+   "name": "Al'Alaq",
+   "page": "597"
+ },
+ {
+   "id": 97,
+   "name": "AlQadar",
+   "page": "598"
+ },
+ {
+   "id": 98,
+   "name": "AlBayinah",
+   "page": "598"
+ },
+ {
+   "id": 99,
+   "name": "AlZalzalah",
+   "page": "599"
+ },
+ {
+   "id": 100,
+   "name": "Al'Adiyat",
+   "page": "599"
+ },
+ {
+   "id": 101,
+   "name": "AlQari'ah",
+   "page": "600"
+ },
+ {
+   "id": 102,
+   "name": "AtTakasur",
+   "page": "600"
+ },
+ {
+   "id": 103,
+   "name": "AlAsr",
+   "page": "601"
+ },
+ {
+   "id": 104,
+   "name": "AlHumazah",
+   "page": "601"
+ },
+ {
+   "id": 105,
+   "name": "AlFiil",
+   "page": "601"
+ },
+ {
+   "id": 106,
+   "name": "Quraisy",
+   "page": "602"
+ },
+ {
+   "id": 107,
+   "name": "AlMaun",
+   "page": "602"
+ },
+ {
+   "id": 108,
+   "name": "AlKausar",
+   "page": "602"
+ },
+ {
+   "id": 109,
+   "name": "AlKafirun",
+   "page": "603"
+ },
+ {
+   "id": 110,
+   "name": "AnNasr",
+   "page": "603"
+ },
+ {
+   "id": 111,
+   "name": "AlLahab",
+   "page": "603"
+ },
+ {
+   "id": 112,
+   "name": "AlIkhlas",
+   "page": "604"
+ },
+ {
+   "id": 113,
+   "name": "AlFalaq",
+   "page": "604"
+ },
+ {
+   "id": 114,
+   "name": "AnNas",
+   "page": "604"
+ }
+]

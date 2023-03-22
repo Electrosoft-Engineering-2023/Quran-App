@@ -26,7 +26,6 @@
 <script src="/socket.io/socket.io.js"></script>
 <script type='text/javascript'>
     var surahs =<%-JSON.stringify(surahs)%>;
-    console.log(surahs);
     var socket = io();
     // var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
     let slideIndex = 1;
@@ -57,13 +56,19 @@
         showSlides(slideIndex = n);
     }
 
+    function zeroPad(num, places) {
+        var zero = places - num.toString().length + 1;
+        return Array(+(zero > 0 && zero)).join("0") + num;
+    }
     function showSlides(n) {
+        
         n-=1;
         slideIndex=n;
+        console.log(n)
         //images
-        currentImage.src="/images/landscape/"+surahs[n].surah_num+'-'+surahs[n].surah+'('+surahs[n].first_page+'-'+surahs[n].last_page+').'+surahs[n].file_type;
-        currentImageFloatRight.innerHTML = surahs[n].id*2-1;
-        currentImageFloatLeft.innerHTML = surahs[n].id*2;
+        currentImage.src="/images/portrait/"+zeroPad(surahs[n].id,3)+'.png';
+        // currentImageFloatRight.innerHTML = surahs[n].id-1;
+        currentImageFloatLeft.innerHTML = surahs[n].id;
     }
 </script>
 

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
+const qr = require("qrcode");
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,4 +22,24 @@ router.get('/slides', function(req, res, next) {
     title: 'Slides',
     layout: './layouts/full-width' });
 });
+
+router.get("/index", (req, res) => {
+  res.render("index", { 
+    title: 'Index',
+    layout: './layouts/full-width' });
+});
+router.post("/scan", (req, res) => {
+  const url = req.body.url;
+  if (url.length === 0) res.send("Empty Data!");
+  
+  qr.toDataURL(url, (err, src) => {
+      if (err) res.send("Error occured");
+      res.render("scan", { 
+        src,
+        title: 'Index',
+        layout: false});
+  });
+  // res.json({message: 'message here'});
+});
+
 module.exports = router;

@@ -1,0 +1,136 @@
+S.No
+Names of Chapters (Surah) No of Verses in each
+Surah (Chapter) Page No
+1 1. Al-Fatiha (The Opening) 7 2
+2 Al-Baqara (The Cow) 286 3
+3
+Aal-E-Imran
+(The Family Of 'Imran, The House Of 'Imran) 200 51
+4 An-Nisa (Women) 176 78
+5 Al-Maeda (The Table, The Table Spread) 120 107
+6 Al-Anaam (Cattle, Livestock) 165 129
+7 Al-Araf (The Heights) 206 152
+8 Al-Anfal (Spoils Of War, Booty) 75 178
+9 At-Tawba (Repentance, Dispensation) 129 188
+10 Yunus (Jonah) 109 209
+11 Hud 123 222
+12 Yusuf (Joseph) 111 236
+13 Ar-Rad (The Thunder) 43 250
+14 Ibrahim (Abraham) 52 256
+15 Al-Hijr (Al-Hijr, Stone land, Rock City) 99 262
+16 An-Nahl (The Bee) 128 268
+17 Al-Isra (Isra', The Night Journey, Children Of Israel) 111 283
+18 Al-Kahf (The Cave) 110 294
+19 Maryam (Mary) 98 306
+20 Taha (Ta-Ha) 135 313
+21 Al-Anbiya (The Prophets) 112 323
+22 Al-Hajj (The Pilgrimage) 78 332
+23 Al-Mumenoon (The Believers) 118 343
+24 An-Noor (The Light) 64 351
+25 Al-Furqan (The Criterion, The Standard) 77 360
+26 Ash-Shuara (The Poets) 227 367
+27 An-Naml (The Ant, The Ants) 93 377
+S.No
+Names of Chapters (Surah) No of Verses in each
+Surah (Chapter) Page No
+28 Al-Qasas (The Story, Stories) 88 386
+29 Al-Ankaboot (The Spider) 69 397
+30 Ar-Room (The Romans The Byzantines) 60 405
+31 Luqman 34 412
+32 As-Sajda (The Prostration,Worship, Adoration) 30 416
+33 (The Clans, The Coalition, The Combined Forces) 73 419
+34 Saba (Saba, Sheba) 54 429
+35 Fatir (The Angels, Originator) 45 435
+36 Ya-Seen (Ya-Seen) 83 441
+37 As-Saaffat (Those Who Set The Ranks, Drawn Up In Ranks) 182 446
+38 Sad (The Letter Sad) 88 453
+39 Az-Zumar (The Troops, Throngs) 75 459
+40 Al-Ghafir (Momin)(The Forgiver (God) ) 85 468
+41 Fussilat (Ha-meem Sajda)(Explained In Detail) 54 478
+42 Ash-Shura (Council, Consultation) 53 484
+43 Az-Zukhruf (Ornaments Of Gold, Luxury) 89 490
+44 Ad-Dukhan (Smoke) 59 496
+45 Al-Jathiya (Crouching) 37 499
+46 Al-Ahqaf (The Wind-Curved Sand hills, The Dunes) 35 503
+47 Muhammad (Pbuh) 38 507
+48 Al-Fatha (Victory, Conquest) 29 512
+49 Al-Hujraat (The Private Apartments, The Inner Apartments) 18 516
+50 Qaf (The Letter Qaf) 45 519
+51 Adh-Dhariyat (The Winnowing Winds) 60 521
+52 At-Tur (The Mount) 49 524
+53 An-Najm (The Star) 62 527
+S.No
+Names of Chapters (Surah) No of Verses in each
+Surah (Chapter) Page No
+54 Al-Qamar (The Moon) 55 529
+55 Ar-Rahman (The Beneficent, The Mercy Giving) 78 532
+56 Al-Waqia (The Event, The Inevitable) 96 535
+57 Al-Hadid (The Iron) 29 532
+58 Al-Mujadila (She That Disputeth, The Pleading Woman) 22 543
+59 Al-Hashr (Exile, Banishment) 24 546
+60
+Al-Mumtahina
+(She That Is To Be Examined, Examining Her) 13 550
+61 As-Saff (The Ranks, Battle Array) 14 552
+62 Al-Jumua (The Congregation, Friday) 11 554
+63 Al-Munafiqoon (The Hypocrites) 11 555
+64 At-Taghabun (Mutual Disillusion, Haggling) 18 557
+65 At-Talaq (Divorce) 12 559
+66 At-Tahrim (Banning, Prohibition) 12 561
+67 Al-Mulk (The Sovereignty, Control) 30 563
+68 Al-Qalam (The Pen) 52 565
+69 Al-Haaqqa (The Reality) 52 568
+70 Al-Maarij (The Ascending Stairways) 44 570
+71 Nooh (Nooh) 28 572
+72 Al-Jinn 28 574
+73 Al-Muzzammil (The Enshrouded One, Bundled Up) 20 577
+74
+Al-Muddaththir
+(The Cloaked One, The Man Wearing A Cloak) 56 579
+75 Al-Qiyama (The Rising Of The Dead, Resurrection) 40 581
+76 Al-Insan (Man) 31 583
+S.No
+Names of Chapters (Surah) No of Verses in each
+Surah (Chapter) Page No
+77 Al-Mursalat (The Emissaries, Winds Sent Forth) 50 585
+78 An-Naba (The Tidings, The Announcement) 40 587
+79 An-Naziat (Those Who Drag Forth, Soul-Snatchers) 46 588
+80 Abasa (He Frowned) 42 590
+81 At-Takwir (The Overthrowing) 29 591
+82 Al-Infitar (The Cleaving, Bursting Apart) 19 592
+83 Al-Mutaffifin (Defrauding, The Cheats, Cheating) 36 593
+84 Al-Inshiqaq (The Sundering, Splitting Open) 25 595
+85 Al-Burooj (The Mansions Of The Stars, Constellations) 22 596
+86 At-Tariq (The Morning Star, The Nightcomer) 17 597
+87 Al-Ala (The Most High, Glory To Your Lord In The Highest) 19 598
+88 Al-Ghashiya (The Overwhelming, The Pall) 26 598
+89 Al-Fajr (The Dawn, Daybreak) 30 599
+90 Al-Balad (The City, This Countryside) 20 601
+91 Ash-Shams (The Sun) 15 601
+92 Al-Lail (The Night) 21 602
+93 Ad-Dhuha (The Morning Hours, Morning Bright) 11 603
+94 Al-Inshirah (Solace, Consolation, Relief) 8 603
+95 At-Tin (The Fig, The Figtree) 8 604
+96 Al-Alaq (The Clot, Read) 19 604
+97 Al-Qadr (Power, Fate) 5 605
+98 Al-Bayyina (The Clear Proof, Evidence) 8 605
+99 Az-Zalzala (The Earthquake) 8 606
+100 Al-Adiyat (The Courser, The Chargers) 11 606
+101 Al-Qaria (The Calamity, The Stunning Blow, The Disaster 11 607
+102 At-Takathur (Rivalry In World Increase, Competition 8 607
+103 Al-Asr (The Declining Day, Eventide, The Epoch) 3 608
+S.No
+Names of Chapters (Surah) No of Verses in each
+Surah (Chapter) Page No
+104 Al-Humaza (The Traducer, The Gossipmonger) 9 608
+105 Al-Fil (The Elephant) 5 608
+106 Quraish (Winter, Quraysh) 4 609
+107 Al-Maun (Small Kindnesses, Almsgiving, Have You Seen) 7 609
+108 Al-Kauther (Abundance, Plenty) 3 609
+109 Al-Kafiroon (The Disbelievers) 6 610
+110 An-Nasr (Succor, Divine Support) 3 610
+111 Al-Masadd (Palm Fibre, The Flame) 5 610
+112 Al-Ikhlas (Sincerity) 4 611
+113 Al-Falaq (The Daybreak, Dawn) 5 611
+114 An-Nas (Mankind) 6 611
+Total No Of Verses in Quran = 6,236

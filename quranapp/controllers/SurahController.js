@@ -1,32 +1,36 @@
-const surahs = require('../api/surah.js')
+const qr = require("qrcode");
+var ip = require('ip');
 
 const getPages = ((req, res) => {
-    res.render('surah', { 
-        title: 'Surah',
-        layout: './layouts/full-width',
-        surahs: surahs,
+    const surahs = require(appRoot + '/api/surah.js')
+    var address = "http://"+ip.address()+":3000/imam";
+    qr.toDataURL(address, (err, src) => {
+        res.render('surah', { 
+            src,
+            title: 'Surah',
+            layout: './layouts/full-width',
+            surahs: surahs,
+        });
     });
+
 })
-const getPage = ((req, res) => {
-    const id = Number(req.params.surahID)
-    const surah = surahs.find(surah => surah.id === id)
-
-    //get surah jpg file
-    const image_name = "/images/alquran/"+surah.surah_num+'-'+surah.surah+'('+surah.first_page+'-'+surah.last_page+').'+surah.file_type;
-
-    if (!surah) {
-    return res.status(404).send('Surah not found')
-    }
-    // res.json(surah)
-    res.render('surah', { 
-        title: 'Surah',
-        layout: './layouts/full-width',
-        surah: JSON.stringify(surah),
-        image_name: image_name,
+const getPagesPortrait = ((req, res) => {
+    const pages_portrait = require(appRoot + '/api/quran_portrait.js')
+    var address = "http://"+ip.address()+":3000/imam";
+    qr.toDataURL(address, (err, src) => {
+        res.render('quran', { 
+            src,
+            title: 'Quran Portrait',
+            layout: './layouts/full-width',
+            surahs: pages_portrait,
+        });
     });
+
+    
 })
+
 
 module.exports = {
     getPages,
-    getPage,
+    getPagesPortrait,    
 }
