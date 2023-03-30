@@ -5,7 +5,7 @@
         $.getJSON('/remote.json', function(data) {
             $.each(data, function(i, obj) {
                 if(obj.type === "Page"){
-                    currentPage.innerText = obj.page*2-1;
+                    currentPage.innerText = obj.page;
                     return false; // Loop will stop running after this
                 }
             });
@@ -17,7 +17,7 @@
     <div class="w3-row w3-container">
         <div class="">
             <a class="w3-button w3-indigo button" href="/remote/surahlist">
-                Surah List
+                <h4>Surah List</h4>
             </a>
         </div> 
     </div>
@@ -46,11 +46,11 @@
     <div class="w3-row w3-container">           
         <div class="">
 
-            <button onclick="goPreviousPage()" class="w3-left w3-button w3-indigo" >
-                <img src="/images/left-arrow.png" alt="buttonpng" style="width:20px; height:20px;">
+            <button onclick="goNextPage()" class="w3-left w3-button w3-indigo" >
+                <img src="/images/left-arrow.png" alt="buttonpng" style="width:30px; height:30px;">
             </button>
-            <button onclick="goNextPage()" class="w3-right w3-button w3-indigo" >
-                <img src="/images/arrow-right.png" alt="buttonpng" style="width:20px; height:20px;">
+            <button onclick="goPreviousPage()" class="w3-right w3-button w3-indigo" >
+                <img src="/images/arrow-right.png" alt="buttonpng" style="width:30px; height:30px;">
             </button>
 
         </div>
@@ -69,13 +69,14 @@
         var input_page = document.getElementById("pageNum").value;
         var page=-1;
         //if odd
-        if(input_page & 1){
-            page=(input_page/2)+1;
-        }
-        //if even
-        else{
-            page=(input_page/2);
-        }
+        // if(input_page & 1){
+        //     page=(input_page/2)+1;
+        // }
+        // //if even
+        // else{
+        //     page=(input_page/2);
+        // }
+        page=(input_page);
 
         //get saved page number
         $.getJSON('/remote.json', function(data) {
@@ -127,7 +128,7 @@
     }
     //get current page
     socket.on('page', function(sock_data) {
-        currentPage.innerText = sock_data.page*2-1;
+        currentPage.innerText = sock_data.page;
     });
 
 </script>
