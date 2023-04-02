@@ -1,13 +1,15 @@
 var express = require('express')
 var router = express.Router()
 
+
+
 const  { 
     getPages,
-    getPage
+    getPagesPortrait,
+    getQR
 } = require('../controllers/SurahController.js')
 
 router.get('/', getPages)
-router.get('/:surahID', getPage)
-
-
+router.get('/portrait', getPagesPortrait)
+router.post('/getQR',getQR)
 module.exports = router

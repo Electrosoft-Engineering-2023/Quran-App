@@ -1,0 +1,114 @@
+<div class="">
+    <div>
+        <div class="slideshow-container viewport">
+            <div class="flex-container">
+                <img id="currentImage" class="image w3-display-middle" src="">
+                <h4 id="currentImageFloatLeft" class="float-right"></h4>
+
+                <a class="prev" onclick="goNextPage()">❮</a>
+                <a class="next" onclick="goPreviousPage()">❯</a>
+            </div>
+            <!-- Images  -->
+                    <!-- Image card -->
+            <div class="row mb-3">
+
+                <div class="card">
+                    <img id="qrcode" style="width: 8vw; height: auto;" class="float-left card-img-top" src=<%-src%> alt="QR Code Image">
+                </div>
+                <!--Image card end.//-->
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script type='text/javascript'>
+    var surahs =<%-JSON.stringify(surahs)%>;
+    var socket = io();
+    // var socket = window.io.connect('http://localhost:3000', {transports:['websocket']});
+    let slideIndex = 1;
+    // showSlides(slideIndex);
+    $( document ).ready(function() {
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    slideIndex = obj.page;
+                    showSlides(parseInt(obj.page));
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+        // executeQuery();
+    });
+    function executeQuery(){
+        $.ajax({
+            url: '/surah/getQR',
+            type: "POST",
+            success: function(data) {
+                qrcode.src = data.qrsrc;
+            }
+        });
+        setTimeout(executeQuery, 10000); //every 10 sec
+    }
+
+    socket.on('page', function(sock_data) {
+        showSlides(sock_data.page);
+    });
+
+
+
+    function goNextPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page+1);
+                    socket.emit('imam', {page:parseInt(page+1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    }
+    function goPreviousPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page-1);
+                    socket.emit('imam', {page:parseInt(page-1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    }
+          //Ajax Function to send a get request
+          function sendPageNumber(id) {
+        $.ajax({
+            type: "GET",
+            url: "/remote/page/" + id,
+                success: function(data) {
+
+            }
+        });
+    }
+
+    function zeroPad(num, places) {
+        var zero = places - num.toString().length + 1;
+        return Array(+(zero > 0 && zero)).join("0") + num;
+    }
+    function showSlides(n) {
+        
+        // n-=1;
+        slideIndex=n;
+        console.log(n)
+        //images
+        currentImage.src="/images/portrait/page"+zeroPad(slideIndex,3)+'.png';
+        // currentImageFloatRight.innerHTML = surahs[n].id-1;
+        currentImageFloatLeft.innerHTML = slideIndex;
+    }
+
+</script>
+

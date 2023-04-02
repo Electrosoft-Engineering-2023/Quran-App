@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
+const qr = require("qrcode");
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,7 +14,7 @@ router.get('/', function(req, res, next) {
 router.get('/imam', function(req, res, next) {
   res.render('imam', { 
     title: 'imam',
-    layout: './layouts/full-width' });
+    layout: './layouts/remote' });
 });
 
 router.get('/slides', function(req, res, next) {
@@ -20,4 +22,14 @@ router.get('/slides', function(req, res, next) {
     title: 'Slides',
     layout: './layouts/full-width' });
 });
+
+router.get("/index", (req, res) => {
+  res.render("index", { 
+    title: 'Index',
+    layout: './layouts/full-width' });
+});
+
+
+
+
 module.exports = router;

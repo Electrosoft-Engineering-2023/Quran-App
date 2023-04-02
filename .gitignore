@@ -1,4 +1,9 @@
 
 quranapp/node_modules/
 **/node_modules
+
+quranapp/public/images/portrait/
+quranapp/public/images/landscape/
+quranapp/public/remote.json
+
 */remote.json
