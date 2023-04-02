@@ -3,18 +3,17 @@
         <div class="slideshow-container viewport">
             <div class="flex-container">
                 <img id="currentImage" class="image w3-display-middle" src="">
-                <h4 id="currentImageFloatRight" class="float-left"></h4>
                 <h4 id="currentImageFloatLeft" class="float-right"></h4>
 
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
+                <a class="prev" onclick="goNextPage()">❮</a>
+                <a class="next" onclick="goPreviousPage()">❯</a>
             </div>
             <!-- Images  -->
                     <!-- Image card -->
             <div class="row mb-3">
 
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src=<%-src%> alt="QR Code Image">
+                <div class="card">
+                    <img id="qrcode" style="width: 8vw; height: auto;" class="float-left card-img-top" src=<%-src%> alt="QR Code Image">
                 </div>
                 <!--Image card end.//-->
             </div>
@@ -40,7 +39,18 @@
                 }
             });
         });
+        // executeQuery();
     });
+    function executeQuery(){
+        $.ajax({
+            url: '/surah/getQR',
+            type: "POST",
+            success: function(data) {
+                qrcode.src = data.qrsrc;
+            }
+        });
+        setTimeout(executeQuery, 10000); //every 10 sec
+    }
 
     socket.on('page', function(sock_data) {
         showSlides(sock_data.page);
@@ -48,12 +58,41 @@
 
 
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
+    function goNextPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page+1);
+                    socket.emit('imam', {page:parseInt(page+1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
     }
+    function goPreviousPage(){
+        //get saved page number
+        $.getJSON('/remote.json', function(data) {
+            $.each(data, function(i, obj) {
+                if(obj.type === "Page"){
+                    var page = obj.page;
+                    sendPageNumber(obj.page-1);
+                    socket.emit('imam', {page:parseInt(page-1)});
+                    return false; // Loop will stop running after this
+                }
+            });
+        });
+    }
+          //Ajax Function to send a get request
+          function sendPageNumber(id) {
+        $.ajax({
+            type: "GET",
+            url: "/remote/page/" + id,
+                success: function(data) {
 
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
+            }
+        });
     }
 
     function zeroPad(num, places) {
@@ -62,13 +101,14 @@
     }
     function showSlides(n) {
         
-        n-=1;
+        // n-=1;
         slideIndex=n;
         console.log(n)
         //images
-        currentImage.src="/images/portrait/"+zeroPad(surahs[n].id,3)+'.png';
+        currentImage.src="/images/portrait/page"+zeroPad(slideIndex,3)+'.png';
         // currentImageFloatRight.innerHTML = surahs[n].id-1;
-        currentImageFloatLeft.innerHTML = surahs[n].id;
+        currentImageFloatLeft.innerHTML = slideIndex;
     }
+
 </script>
 

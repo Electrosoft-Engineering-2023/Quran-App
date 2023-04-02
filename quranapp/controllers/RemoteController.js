@@ -11,29 +11,20 @@ const updatePage = ((req, res) => {
 })
 
 const getSurahList = ((req, res) => { 
-    const fileName = __dirname +'/../public/surahlist.json'
+    const fileName = __dirname +'/../public/surahlist2.json'
     const surahs = JSON.parse(fs.readFileSync(fileName));
     res.render('surah-list', { 
         title: 'Surah List',
-        layout: './layouts/full-width',
+        layout: './layouts/remote',
         surahs: surahs,
     });
 })
-const getSurahPage = ((req, res) => { 
-    const fileName = __dirname +'/../public/remote.json'
-    const file = require(fileName);
-    const data = Number(req.params.pageID);
-    file[0].page = data;
 
-    fs.writeFileSync(fileName, JSON.stringify(file));
-
-})
 
 
 
 module.exports = {
     getSurahList,
     updatePage,
-    getSurahPage,
 
 }
