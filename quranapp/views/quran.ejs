@@ -39,7 +39,7 @@
                 }
             });
         });
-        // executeQuery();
+        executeQuery();
     });
     function executeQuery(){
         $.ajax({
@@ -85,7 +85,7 @@
         });
     }
           //Ajax Function to send a get request
-          function sendPageNumber(id) {
+    function sendPageNumber(id) {
         $.ajax({
             type: "GET",
             url: "/remote/page/" + id,
