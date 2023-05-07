@@ -22,6 +22,7 @@ var remoteRouter = require('./routes/remote');
 app.use(expressLayouts)
 app.set('views', path.join(__dirname, 'views'));
 // app.set('layout', './views/layouts/full-width')
+app.set('layout', false)
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

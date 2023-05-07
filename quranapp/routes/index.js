@@ -8,7 +8,7 @@ const qr = require("qrcode");
 router.get('/', function(req, res, next) {
   res.render('home', { 
     title: 'Home',
-    layout: './layouts/full-width' });
+    layout: './layouts/remote' });
 });
 //socket io only
 router.get('/imam', function(req, res, next) {
